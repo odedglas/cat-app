@@ -1,6 +1,6 @@
-# cropchat
+# CropCat
 
-> PWA poc
+> PWA Poc for cat lovers
 
 ## Build Setup
 
