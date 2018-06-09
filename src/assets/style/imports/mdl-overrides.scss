@@ -1,0 +1,17 @@
+@import '../variables';
+
+.mdl-layout__drawer-button {
+  outline: none;
+}
+
+.mdl-layout__drawer {
+  transition-duration: .4s !important;
+}
+
+.mdl-button.mdl-navigation__link {
+  text-transform: none;
+  text-align:left;
+  display:flex !important;
+  align-items:center;
+}
+

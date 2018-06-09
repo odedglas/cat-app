@@ -1,0 +1,11 @@
+@import '../variables';
+
+::selection {
+  background-color: transparent;
+}
+
+.full-size {
+  height:100%;
+  width:100%;
+  position: absolute;
+}
