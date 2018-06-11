@@ -7,8 +7,6 @@ import App from './App';
 import router from './router';
 import directives from './directive';
 
-require('image-capture');
-
 Vue.config.productionTip = false;
 
 /* Plugins */

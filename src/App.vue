@@ -25,6 +25,7 @@
 
 <script>
   import firebase from './service/firebase';
+  import cache from './service/cache';
 
   require('material-design-lite');
 
@@ -41,7 +42,7 @@
         appProvider,
         'cats',
         {
-          enumerable: true, get: () => this.cat,
+          enumerable: true, get: () => this.fetchCats(),
         },
       );
       return { appProvider };
@@ -50,6 +51,13 @@
       cat: firebase.database.ref('cats').orderByChild('created_at'),
     },
     methods: {
+      fetchCats() {
+        if (navigator.onLine) {
+          cache.set('cats', this.cat);
+          return this.cat;
+        }
+        return cache.get('cats');
+      },
       toggleDrawer() {
         const layout = this.$refs.layout;
         layout.MaterialLayout.toggleDrawer();

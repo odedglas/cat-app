@@ -5,7 +5,7 @@
         <img :src="selectedCat.url" />
       </div>
       <div class="info">
-        <span>{{ selectedCat.info }}</span>
+        <span>{{ selectedCat.info }} - {{ createdAt }}</span>
       </div>
     </div>
     <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
@@ -21,6 +21,8 @@
   </div>
 </template>
 <script>
+
+  import moment from 'moment';
 
   export default {
     name: 'cat-details',
@@ -38,6 +40,9 @@
       selectedCat() {
         return this.cats.length > 0 ? this.cats.find(c => c['.key'] === this.id) : {};
       },
+      createdAt() {
+        return this.selectedCat && moment(-this.selectedCat.created_at).fromNow();
+      },
     },
   };
 
@@ -48,7 +53,7 @@
     width:100%;
   }
   .info {
-    text-align: right;
+    text-align: center;
     padding: 5px;
     color: #555;
     font-size: 10px;

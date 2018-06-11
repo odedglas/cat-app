@@ -65,7 +65,7 @@
         firebaseService.addNewCat(
           this.photoURL,
           this.title,
-          'Posted by Charles on Tuesday',
+          'Posted by Charles',
         )
           .then(() => {
             this.$router.push('/');
